@@ -1,0 +1,6 @@
+$('body').append($('<div id="screen"></div>'));
+
+var form = $("<%=j render 'form' %>");
+
+$('body').append($("<div id='new_form'><h1>New Ontology</h1></div>"));
+form.appendTo('#new_form');

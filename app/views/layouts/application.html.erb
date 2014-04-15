@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LicenseGenerator</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+	<script src="//use.edgefonts.net/lato:n3,n4,n7,n9.js"></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="header">
+	<div id="header-wrap">
+		<div id="logo">License<b>Generator</b></div>
+		<div id="routes">
+			<%= link_to "ONTOLOGIES", '/ontologies' %>
+			<%= link_to "LICENSES", '/licenses' %>
+		</div>
+	</div>
+</div>
+
+
+<div id="main">
+	<%= yield %>
+</div>
+
+
+</body>
+</html>

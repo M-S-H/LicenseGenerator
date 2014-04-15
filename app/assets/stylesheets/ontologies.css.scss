@@ -1,0 +1,109 @@
+// Place all the styles related to the Ontologies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'layout';
+
+
+#new_ontology_link {
+	float: right;
+}
+
+
+#o-header {
+	h1 {
+		float: left;
+	}
+}
+
+
+.ontology {
+	width: 300px;
+	float: left;
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-top: 20px;
+
+	background-color: #EEE;
+	border-top: 3px solid $green;
+	color: #000;
+	box-shadow: 0px 0px 2px #666;
+	text-align: center;
+
+	h2 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.button {
+		margin: auto;
+	}
+}
+
+
+#new_form {
+	width: 350px;
+	height: 250px;
+	position: absolute;
+	z-index: 200;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -175px;
+	padding: 25px;
+
+	color: #999;
+	background-color: #FAFAFA;
+	border-radius: 5px;
+
+	input[type=text] {
+		width: 330px;
+		padding: 10px;
+
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	input[type=file] {
+		display: none;
+	}
+}
+
+
+#new_ontology {
+
+	h2 {
+		margin-bottom: 10px;
+	}
+
+
+	.button {
+		font-size: 16px;
+		margin: auto;
+	}
+
+
+	#ontology-upload-button {
+		margin: 0;
+		width: 100px;
+		float: left;
+	}
+
+
+	#file-name {
+		float: left;
+		height: 29px;
+		width: 237px;
+		padding-top: 10px;
+		padding-left: 10px;
+
+		border: 1px solid rgba(0, 0, 0, 0.5);
+		border-left: 0px solid #000;
+		color: rgba(0, 0, 0, 0.5);
+		background-color: #fff;
+	}
+
+
+	.field {
+		margin-bottom: 20px;
+	}
+}

@@ -1,0 +1,59 @@
+<h1>License Creator</h1>
+
+<%= form_for([@ontology, @ontology.licenses.build]) do |f| %>
+
+	<%= text_field_tag :licname, "", placeholder: "License Name" %>
+	<div class="button" id="new_action" ontology="<%= @ontology.id %>">New Action</div>
+	<div class="float-break"></div>
+
+	<div id="action-container">
+		<div class="action">
+			<div class="action-head">
+				<%= text_field_tag "actionname[0]", "", placeholder: "Action Name" %>
+				<i class="fa fa-chevron-circle-up" action="action0"></i>
+				<div class="float-break"></div>
+			</div>
+			<%= fields_for "actions[0]" do |a| %>
+				<% @con.entity_restrictions.each do |er| %>
+					<%= a.fields_for er.name do |erf| %>
+						<% er.restrictions.each do |r| %>
+							<%= erf.fields_for r.name do |rf| %>
+								<div class="restriction action0">
+									<h4><%= r.name %></h4>
+									<h5>Values</h5>
+									<% r.values.each do |v| %>
+										<%= rf.radio_button "value", v %> <%= label_tag "value", v %>
+									<% end %>
+									<h5>Function</h5>
+									<% if r.type == "ComparableProperty" %>
+										<%= rf.radio_button "function", ">=" %>
+										<%= label_tag "function", "Greater than or equal to" %>
+										<%= rf.radio_button "function", ">" %>
+										<%= label_tag "function", "Greater than" %>
+										<%= rf.radio_button "function", "<=" %>
+										<%= label_tag "function", "Less than or equal to" %>
+										<%= rf.radio_button "function", "<" %>
+										<%= label_tag "function", "Less than" %>
+										<%= rf.radio_button "function", "==" %>
+										<%= label_tag "function", "Equal to" %>
+										<%= rf.radio_button "function", "!=" %>
+										<%= label_tag "function", "Not equal to" %>
+									<% else %>
+										<%= rf.radio_button "function", "==" %>
+										<%= label_tag "function", "Equal to" %>
+										<%= rf.radio_button "function", "!=" %>
+										<%= label_tag "function", "Not equal to" %>
+									<% end %>
+								</div>
+							<% end %>
+						<% end %>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+
+	<br /><br />
+	<%= f.submit "Generate License", class: 'button' %>
+
+<% end %>

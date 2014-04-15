@@ -1,0 +1,47 @@
+<div id="o-header">
+	<h1>ONTOLOGIES</h1>
+	<%= link_to "NEW ONTOLOGY", new_ontology_path, id: 'new_ontology_link', class: 'button', remote: true %>
+</div>
+
+<div class="float-break"></div>
+
+<% @ontologies.each do |ontology| %>
+	<div class="ontology">
+		<h2><%= ontology.name %></h2>
+		<%= link_to "GENERATE LICENSE", "/licgen/#{ontology.id}", class: "button"%><br />
+		<%= link_to "DOWNLOAD", "/ontologies/download/#{ontology.id}", class: "button"%><br />
+		<%= link_to "DESTROY", ontology, method: :delete, data: { confirm: 'Are you sure?' }, class: "button"%><br />
+	</div>
+<% end %>
+
+<div class="float-break"></div>
+
+<!--
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Url</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @ontologies.each do |ontology| %>
+			<tr>
+				<td><%= ontology.name %></td>
+				<td><%= ontology.url %></td>
+				<td><%= link_to 'Show', ontology %></td>
+				<td><%= link_to 'Generate License', "/licgen/#{ontology.id}" %></td>
+				<td><%= link_to 'Destroy', ontology, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ontology', new_ontology_path %>
+-->

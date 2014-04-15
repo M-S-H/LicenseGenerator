@@ -1,0 +1,13 @@
+<div id="license-show">
+	<div id="left">
+		<h1><%= @license.name %></h1>
+		<span>Ontology: <%= @license.ontology.name %></span>
+		<%= link_to "DOWNLOAD", "/licenses/download/#{@license.id}", class: 'button' %>
+		<%= link_to 'DESTROY', @license, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %><br />
+		<%= link_to raw('<i class="fa fa-arrow-circle-o-left"></i> Back'), "/licenses", id: "lic-back" %>
+	</div>
+
+	<div id="right">
+		<%= @doc.html_safe %>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+<h1>LICENSES</h1>
+
+<% @licenses.each do |l| %>
+	<div class="license">
+		<h3><%= link_to l.name, l %></h3>
+		<span>Ontology: <%= l.ontology.name %></span>
+		<%= link_to 'DESTROY', l, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to "DOWNLOAD", "/licenses/download/#{l.id}", class: 'button' %>
+		<div class="float-break"></div>
+	</div>
+<% end %>

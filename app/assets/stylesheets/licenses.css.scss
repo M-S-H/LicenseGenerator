@@ -1,0 +1,135 @@
+// Place all the styles related to the Licenses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'layout';
+
+
+#new_license {
+	margin-top: 20px;
+
+	input[type=text] {
+		width: 330px;
+		padding: 10px;
+		float: left;
+
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+
+	#new_action {
+		float: right;
+	}
+}
+
+
+.action {
+	margin-top: 30px;
+	box-shadow: 0px 0px 2px #666;
+}
+
+
+.action-head {
+	background-color: #333;
+	padding: 5px 10px;
+
+	input[type=text] {
+		background-color: #333;
+		border: 1px solid #333;
+		color: #FFF;
+
+		&:hover {border: 1px solid #666;}
+
+		&:focus {
+			background-color: #999;
+			border: 1px solid #EEE;
+		}
+	}
+
+	i {
+		float: right;
+		color: #CCC;
+		margin-top: 14px;
+		margin-right: 10px;
+		font-size: 20px;
+		cursor: pointer;
+	}
+}
+
+
+.restriction {
+	padding: 20px;
+
+	background-color: #EEE;
+	color: #333;
+	margin-top: 2px;
+}
+
+
+.license {
+	background-color: #EEE;
+	padding: 10px;
+	box-shadow: 0 0 2px #666;
+	border-top: 3px solid $green;
+	margin-top: 10px;
+
+	h3 {
+		float: left;
+		font-size: 24px;
+		color: #333;
+		margin-top: 5px;
+
+		a {
+			color: #333;
+			&:hover {color: $green;}
+		}
+	}
+
+	span {
+		float: left;
+		color: #999;
+		margin-left: 20px;
+		margin-top: 12px;
+		font-weight: lighter;
+	}
+
+	a {
+		float: right;
+		margin-left: 10px;
+	}
+}
+
+
+#license-show {
+	#left {
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 28px;
+	}
+
+	#left span {
+		color: $green;
+		font-weight: lighter;
+	}
+
+	.button {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		background-color: rgba(255, 255, 255, 0.6);
+
+		&:hover {background-color: $green;}
+	}
+
+	#lic-back {
+		margin-top: 20px;
+
+		font-size: 20px;
+		color: #DDD;
+
+		&:hover {color: #999;}
+	}
+}
